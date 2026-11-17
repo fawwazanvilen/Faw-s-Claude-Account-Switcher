@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Claude Switcher</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Claude Switcher</h1>
+    <div id="tools" class="tools" hidden>
+      <button id="refresh" class="icon" title="Refresh usage" aria-label="Refresh usage">↻</button>
+      <button id="lock" class="icon" title="Lock saved accounts" aria-label="Lock">Lock</button>
+    </div>
+  </header>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <section id="gate" class="gate" hidden>
+    <p id="gate-msg" class="gate-msg"></p>
+    <input id="pass" type="password" autocomplete="off" placeholder="Passphrase" aria-label="Passphrase" />
+    <input id="pass2" type="password" autocomplete="off" placeholder="Repeat passphrase" aria-label="Repeat passphrase" hidden />
+    <button id="gate-go" class="primary"></button>
+    <button id="forgot" class="link" hidden>Forgot passphrase?</button>
+  </section>
+
+  <main id="main" hidden>
+    <div id="unsaved" class="unsaved" hidden></div>
+    <ul id="accounts"></ul>
+    <footer>
+      <button id="add" class="primary">+ Add account</button>
+      <p class="hint">Sessions are encrypted and stored only on this device.</p>
+    </footer>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
